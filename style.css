@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    /* ### Primary */
+    --strongCyan: hsl(172, 67%, 45%);
+
+    /* ### Neutral */
+    --veryDarkCyan: hsl(183, 100%, 15%);
+    --darkGrayishCyan: hsl(186, 14%, 43%);
+    --grayishCyan: hsl(184, 14%, 56%);
+    --lightGrayishCyan: hsl(185, 41%, 84%);
+    --veryLightGrayishCyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--lightGrayishCyan);
+    height: 100%;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+main h1 {
+    color: var(--veryDarkCyan);
+    letter-spacing: .5rem;
+    font-size: 1.65rem;
+    margin: 2rem auto;
+}
+
+.calc_container {
+    background-color: var(--white);
+    border-radius: 16px 16px 0 0;
+    margin: 0 -1.5rem;
+    padding: 1.5rem;    
+    max-width: 100vw;
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+label, h2 {
+    margin-bottom: .35rem;
+    color: var(--darkGrayishCyan);
+    font-size: .9rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+input {
+    text-align: right;
+    width: 100%;
+}
+
+input, button {
+    border: none;
+    background-color: var(--veryLightGrayishCyan);
+    border-radius: 5px;
+    color: var(--veryDarkCyan); 
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: .5rem 1rem;
+}
+
+input:hover, input:focus-visible {    
+    outline-style: solid;
+    outline-color: var(--strongCyan);
+    outline-width: 2px;
+}
+
+::placeholder {
+    color: var(--veryDarkCyan); 
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;  
+    gap: 1rem 0; 
+    flex-wrap: wrap;
+}
+
+.buttons button, .buttons input {
+    width: 47.5%;
+    background-color: var(--veryDarkCyan); 
+    color: var(--veryLightGrayishCyan);   
+    cursor: pointer;
+}
+
+.buttons .custom-input {
+    background-color: var(--veryLightGrayishCyan);
+    color: var(--veryDarkCyan); 
+    cursor: auto;
+}
+
+.custom-input::placeholder {
+    color: var(--darkGrayishCyan);
+}
+
+.buttons button:hover {    
+    background-color: var(--lightGrayishCyan);
+    color: var(--veryDarkCyan);
+}
+
+label ~ div {
+    position: relative;
+}
+
+label ~ div p, label ~ div i {
+    color: var(--lightGrayishCyan);
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translate(0, -50%);
+}
+
+label ~ div p {
+    font-size: 1.5rem;
+}
+
+.summary--section {
+    background-color: var(--veryDarkCyan);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+}
+
+.summary--section h2 {
+    color: var(--veryLightGrayishCyan);
+    margin: 0;
+}
+
+.summary--section p {
+    color: var(--grayishCyan);
+    font-size: .8rem;
+}
+
+.summary--section input {
+    font-size: 2rem;
+    color: var(--strongCyan);
+    width: 50%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+.summary--section ::placeholder {
+    color: var(--strongCyan);
+}
+
+.summary--section button {    
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+    font-size: 1.25rem;
+    width: 100%;
+}
+
+.summary--box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
