@@ -50,7 +50,7 @@ main h1 {
     background-color: var(--white);
     border-radius: 16px;
     margin: 0 -1.5rem;
-    padding: 1.5rem;
+    padding: 2.25rem;
     max-width: 100vw;
 }
 
@@ -130,6 +130,12 @@ body button:hover {
     opacity: 1;
 }
 
+body button.clicked {
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+    opacity: 1;
+}
+
 label~div {
     position: relative;
 }
@@ -154,7 +160,7 @@ label~div p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem 1rem;    
+    padding: 2rem 1rem;
 }
 
 .summary--section h2 {
@@ -197,6 +203,16 @@ label~div p {
     margin-bottom: 1rem;
 }
 
+.attribution {
+    margin: 1.5rem 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
 @media screen and (min-width: 1200px) {
 
     main h1 {
@@ -204,7 +220,7 @@ label~div p {
     }
 
     .calc_container {
-        display: flex;        
+        display: flex;
         margin: 0 0 3rem 0;
         padding: 2.5rem;
         max-width: 65vw;
@@ -217,19 +233,19 @@ label~div p {
 
     .summary--container {
         width: 50%;
-        padding: 3rem 2.5rem;               
+        padding: 3rem 2.5rem;
     }
 
     .summary--section h2 {
-        font-size: 1rem;        
+        font-size: 1rem;
     }
 
-    .summary--section p {        
+    .summary--section p {
         font-size: .9rem;
     }
 
     .summary--section input {
-        font-size: 3rem;        
+        font-size: 3rem;
     }
 
     .buttons button,
@@ -244,4 +260,7 @@ label~div p {
         margin-bottom: 1.75rem;
     }
 
+    .attribution {
+        margin: 0;
+    }
 }

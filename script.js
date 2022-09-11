@@ -29,7 +29,11 @@ peopleInput.addEventListener("input", () => {
 })
 
 for (let button of tipButtons) {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", () => {     
+        for (let button of tipButtons) {
+            button.classList.remove("clicked");
+        }   
+        button.classList.add("clicked");
         window.percentage = button.innerHTML.slice(0, -1);
         if (peopleValue != null && window.percentage != null) {
             updateTotal();
@@ -46,7 +50,7 @@ function updateTotal() {
 
 function updateTipAmount() {
     tipAmount.value = '';
-    tipAmount.value = `€${(billValue / peopleValue)  * (window.percentage / 100)}`;
+    tipAmount.value = `€${(billValue * window.percentage )  / ( peopleValue * 100)}`;
 }
 
 
