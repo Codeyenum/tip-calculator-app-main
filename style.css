@@ -57,8 +57,20 @@ main h1 {
 form>div {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;    
     width: 100%;
+}
+
+form small {
+    color: rgba(248, 42, 42, .75);
+    display: none;
+    position: absolute;
+    top: -1.6rem;
+    right: 0;    
+}
+
+form small.error {
+    display: block;
 }
 
 label,
@@ -91,6 +103,12 @@ input:hover,
 input:focus-visible {
     outline-style: solid;
     outline-color: var(--strongCyan);
+    outline-width: 2px;
+}
+
+input.error {
+    outline-style: solid;
+    outline-color: rgba(248, 42, 42, .75);
     outline-width: 2px;
 }
 

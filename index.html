@@ -21,10 +21,11 @@
         <div class="calc_container">
             <form autocomplete="off">
                 <div class="bill-field">
-                    <label for="firstname">Bill </label>
+                    <label for="bill">Bill </label>
                     <div>
                         <input type="text" name="bill" id="bill" placeholder="0">
-                        <p>$</p>
+                        <small>input an amount</small>
+                        <p>$</p>                        
                     </div>
                 </div>
                 <div class="button-field">
@@ -42,7 +43,8 @@
                     <label for="people">Number of People </label>
                     <div>
                         <input type="text" name="people" id="people" placeholder="0" autocomplete="off">
-                        <i class="fa-solid fa-user"></i>
+                        <small>Can't be zero</small>
+                        <i class="fa-solid fa-user"></i>                        
                     </div>
                 </div>
             </form>
