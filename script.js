@@ -1,18 +1,19 @@
 let billInput = document.querySelector(".bill-field input");
 let peopleInput = document.querySelector(".people-field input");
+let customInput = document.querySelector(".button-field input");
 
 let tipAmount = document.querySelector(".tip-amount");
 let totalAmount = document.querySelector(".total-amount");
 
 let tipButtons = document.querySelectorAll(".buttons button");
+let resetBtn = document.querySelector(".reset-button");
 
 let billValue;
 let peopleValue;
 
 
 billInput.addEventListener("input", () => {
-    billValue = billInput.value;
-    // console.log(billValue);
+    billValue = billInput.value;    
     if (peopleValue != 0 && window.percentage != null) {
         updateTotal();
         updateTipAmount();
@@ -20,9 +21,17 @@ billInput.addEventListener("input", () => {
 })
 
 peopleInput.addEventListener("input", () => {
-    peopleValue = peopleInput.value;
-    // console.log(peopleValue);
+    peopleValue = peopleInput.value;    
     if (peopleValue != 0 && window.percentage != null) {
+        updateTotal();
+        updateTipAmount();
+    }
+})
+
+customInput.addEventListener("input", () => {
+    customValue = customInput.value;
+    window.percentage = customValue;    
+    if (customInput != 0 && window.percentage != null) {        
         updateTotal();
         updateTipAmount();
     }
@@ -42,15 +51,20 @@ for (let button of tipButtons) {
     })
 }
 
-// console.log(window.percentage);
 function updateTotal() {
     tipAmount.value = '';
     totalAmount.value = `€${billValue / peopleValue}`;
 }
 
 function updateTipAmount() {
-    tipAmount.value = '';
-    tipAmount.value = `€${(billValue * window.percentage )  / ( peopleValue * 100)}`;
+    tipAmount.value = '';    
+    tipAmount.value = `€${(billValue * window.percentage )  / ( peopleValue * 100)}`;    
 }
 
-
+resetBtn.addEventListener("click", ()=> {
+    resetBtn.classList.toggle("clicked");
+    billValue = billInput.value = 0;
+    peopleInput.value = peopleValue = 0;    
+    tipAmount.value = '';
+    totalAmount.value = '';
+})

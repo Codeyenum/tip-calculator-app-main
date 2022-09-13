@@ -215,6 +215,11 @@ label~div p {
 
 @media screen and (min-width: 1200px) {
 
+    input,
+    button {
+        font-size: 1.25rem;
+    }
+
     main h1 {
         margin: 2.5rem;
     }
@@ -223,7 +228,7 @@ label~div p {
         display: flex;
         margin: 0 0 3rem 0;
         padding: 2.5rem;
-        max-width: 65vw;
+        max-width: 60vw;
     }
 
     form {
@@ -245,15 +250,12 @@ label~div p {
     }
 
     .summary--section input {
-        font-size: 3rem;
+        font-size: 2.35rem;
     }
 
     .buttons button,
     .buttons input {
-        width: 31%;
-        background-color: var(--veryDarkCyan);
-        color: var(--veryLightGrayishCyan);
-        cursor: pointer;
+        width: 30%;
     }
 
     .summary--box {
