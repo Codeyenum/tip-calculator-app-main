@@ -14,9 +14,6 @@ let peopleValue;
 
 billInput.addEventListener("input", () => {
     billValue = billInput.value;
-    function containsAnyLetter(str) {
-        return /[a-zA-Z]/.test(str);
-    }
     if (containsAnyLetter(billValue)) {
         billInput.classList.add("error");
         billInput.nextElementSibling.classList.add("error");
@@ -31,13 +28,18 @@ billInput.addEventListener("input", () => {
 })
 
 peopleInput.addEventListener("input", () => {
-    peopleValue = peopleInput.value;
-    if (peopleValue == 0) {
+    peopleValue = peopleInput.value;    
+    if (containsAnyLetter(peopleValue)) {        
+        peopleInput.classList.add("error");
+        peopleInput.nextElementSibling.classList.add("error");
+        peopleInput.nextElementSibling.innerHTML = "Can't be letters";
+    } else if (peopleValue == 0) {
         peopleInput.classList.add("error")
         peopleInput.nextElementSibling.classList.add("error")
     } else {
         peopleInput.classList.remove("error");
         peopleInput.nextElementSibling.classList.remove("error");
+        peopleInput.nextElementSibling.innerHTML = "Can't be zero";
     }
     if (peopleValue != 0 && window.percentage != null) {
         updateTotal();
@@ -66,6 +68,10 @@ for (let button of tipButtons) {
             updateTipAmount();
         }
     })
+}
+
+function containsAnyLetter(str) {
+    return /[a-zA-Z]/.test(str);
 }
 
 function updateTotal() {
